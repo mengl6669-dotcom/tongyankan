@@ -81,3 +81,40 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
     background: linear-gradient(var(--bg), transparent 20%, transparent 85%, var(--bg));
   }
 }
+
+.founder-layout {
+  max-width: 58rem;
+  margin: 0 auto;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(40px, 6vw, 86px);
+}
+.founder-identity { text-align: center; }
+.creative-question { isolation: isolate; }
+.creative-question > img {
+  position: absolute;
+  inset: 0 0 0 auto;
+  z-index: -1;
+  width: 47%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  mask-image: linear-gradient(90deg, transparent, black 40%);
+}
+.creative-question .quote { max-width: 58%; }
+.pagehero-art img[src$="luminous-gaze.jpg"] { object-position: center 39%; }
+.pagehero-art img[src$="starlit-profile.jpg"] { object-position: center 59%; }
+.cosmic-panel img[src$="cosmic-figure.jpg"] { object-position: center 25%; }
+@media (max-width: 760px) {
+  .founder-layout { grid-template-columns: 1fr; gap: 24px; }
+  .creative-question { padding-bottom: 0; display: flex; flex-direction: column; }
+  .creative-question .quote { max-width: 100%; }
+  .creative-question > img {
+    position: static;
+    order: 1;
+    width: calc(100% + 14vw);
+    margin: 18px -7vw 0;
+    height: clamp(220px, 70vw, 340px);
+    mask-image: linear-gradient(transparent, black 24%);
+  }
+}
