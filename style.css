@@ -205,3 +205,17 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
   .sanctum-scene .pagehero-art { inset: auto 0 0; height: min(65vw, 330px); }
   .sanctum-scene .pagehero-art:after { background: linear-gradient(var(--bg),transparent 22%,transparent 85%,var(--bg)); }
 }
+
+.origin-section .section-head, #inner-philanthropy .section-head { margin-bottom: 0; }
+#inner-philanthropy .giving-reflection {
+  margin: 1.1em 0 0;
+  padding-left: .85em;
+  border-left: 1px solid var(--gold);
+  color: var(--paper);
+  font: normal clamp(17px, 1.35vw, 21px)/1.7 'Songti SC', 'Noto Serif CJK SC', serif;
+}
+.giving-reflection span { display: inline-block; }
+.closing.shared-light-scene {
+  --scene: url("assets/shared-light-wide.jpg");
+  --focus: 72% center;
+}
