@@ -21,5 +21,42 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
 @media(max-width:1100px) and (min-width:761px){header .brand-mark{width:40px;height:57px}header .logo{gap:10px;font-size:25px}header .logo small{font-size:9px}.brand-asset-preview{height:280px;padding:25px}.avatar-preview img{width:190px;height:190px}}
 @media(max-width:760px){header .brand-mark{width:38px;height:53px}header .logo{gap:10px;font-size:23px}header .logo small{font-size:9px;letter-spacing:.14em;margin-top:4px}.brand-guide-hero{grid-template-columns:1fr;gap:40px;padding:70px 8vw;min-height:0}.brand-guide-symbol img{max-width:220px}.brand-guide h1{font-size:37px}.brand-guide-hero p{font-size:16px}.brand-asset-grid{grid-template-columns:1fr;gap:45px}.brand-asset-preview{height:350px}.brand-download-row{flex-direction:column;gap:5px}.brand-palette{grid-template-columns:1fr 1fr;gap:25px}.brand-palette span{height:100px}.brand-palette h3{font-size:21px}.avatar-preview img{width:250px;height:250px}}
 
-.brand-series-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}.brand-series-card{min-height:145px;padding:24px 28px;background:var(--bg);display:flex;flex-direction:column;justify-content:space-between}.brand-series-card span{font:13px/1.5 Georgia,'Songti SC',serif;letter-spacing:.18em;color:var(--gold)}.brand-series-card h3{margin:18px 0 0;font:23px/1.5 Georgia,serif;letter-spacing:.05em}@media(max-width:760px){.brand-series-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.brand-series-card{min-height:120px;padding:18px}}
+.brand-series-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(24px, 4vw, 68px);
+}
+.brand-series-card {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 1.1rem;
+  padding: clamp(16px, 2vw, 28px) 0;
+  border-top: 1px solid var(--line);
+}
+.brand-series-card h3 {
+  margin: 0;
+  color: var(--paper);
+  font: normal clamp(30px, 3vw, 46px)/1.25 'Songti SC', 'Noto Serif CJK SC', serif;
+}
+.brand-series-card span {
+  color: var(--gold);
+  font: italic clamp(16px, 1.4vw, 21px)/1.4 Georgia, serif;
+}
+#vision .triptych .photo-art {
+  height: auto;
+  aspect-ratio: 0.85;
+}
+#vision .triptych .photo-art img {
+  position: absolute;
+  inset: 0;
+}
+#vision img[src$="inner-cosmos-portrait.jpg"] { object-position: center 56%; }
+@media (max-width: 840px) {
+  .brand-series-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+  .brand-series-grid { grid-template-columns: 1fr; }
+  .brand-series-card { justify-content: space-between; }
+}
 .master-brand-lockup{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:clamp(28px,6vw,80px);align-items:center;max-width:1080px;margin:72px auto;padding:0 6vw}.master-brand-lockup img{width:100%;height:auto;display:block;border:1px solid var(--line)}.master-brand-name{font:clamp(28px,3vw,42px)/1.4 'Songti SC','Noto Serif CJK SC',serif;letter-spacing:.1em;margin:0 0 18px;color:var(--paper)}.master-brand-hero .master-logo-image{max-width:420px;border:1px solid var(--line)}@media(max-width:760px){.master-brand-lockup{grid-template-columns:1fr;max-width:420px;text-align:center}.master-brand-lockup img{max-width:240px;margin:0 auto}.master-brand-hero{grid-template-columns:1fr;min-height:auto;padding:60px 8vw}.master-brand-hero .master-logo-image{max-width:320px}}
