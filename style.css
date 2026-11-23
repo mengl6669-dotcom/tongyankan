@@ -119,32 +119,33 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
 }
 
 .creation-fields-head {
-  position: relative;
-  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(140px, .72fr) minmax(0, 1fr);
+  grid-template-areas: "title light description";
   align-items: center;
-  grid-template-columns: 1fr 1.2fr;
-  gap: clamp(24px, 5vw, 80px);
-  min-height: clamp(240px, 23vw, 350px);
+  gap: clamp(20px, 3vw, 54px);
 }
+.creation-fields-head > div { grid-area: title; }
 .creation-fields-head::before {
   content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0 0 0 auto;
-  width: 29%;
-  background: url("assets/i-am.jpg") center 43% / cover no-repeat;
-  opacity: .85;
-  mask-image: radial-gradient(ellipse closest-side, black 32%, transparent 100%);
+  grid-area: light;
+  height: clamp(210px, 22vw, 330px);
+  background: url("assets/i-am.jpg") center 38% / cover no-repeat;
+  mask-image: radial-gradient(ellipse closest-side, black 42%, transparent 100%);
 }
-.creation-fields-head .muted {
-  max-width: 24em;
-  margin: 0;
-  padding-right: 1em;
-  width: 65%;
+.creation-fields-head .muted { grid-area: description; margin: 0; text-wrap: pretty; }
+.hero.has-photograph .hero-photograph { inset: 0; }
+.hero.has-photograph .hero-photograph img { object-position: 78% 52%; }
+.hero.has-photograph::after {
+  background: linear-gradient(90deg, #07151899, transparent 65%), linear-gradient(0deg, var(--bg), transparent 15%);
 }
 @media (max-width: 760px) {
-  .creation-fields-head { grid-template-columns: 1fr; gap: 16px; }
-  .creation-fields-head::before { width: 46%; height: 170px; inset: 12px 0 auto auto; }
-  .creation-fields-head h2 { max-width: 60%; }
-  .creation-fields-head .muted { width: auto; }
+  .creation-fields-head {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "light" "description";
+    text-align: center;
+    gap: 14px;
+  }
+  .creation-fields-head::before { justify-self: center; width: 150px; height: 170px; }
+  .hero.has-photograph::after { background: linear-gradient(90deg, #071518d9, #07151844), linear-gradient(0deg, var(--bg), transparent 25%); }
 }
