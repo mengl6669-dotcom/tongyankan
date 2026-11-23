@@ -154,3 +154,54 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
   .creation-fields-head::before { width: 150px; }
   .hero.has-photograph::after { background: linear-gradient(90deg, #071518d9, #07151844), linear-gradient(0deg, var(--bg), transparent 25%); }
 }
+
+/* Panoramic scenes for the world invitation, audience and healing sections. */
+.reach-scene, .salon-scene {
+  --edge: linear-gradient(0deg, var(--bg), transparent 16%, transparent 85%, var(--bg));
+  background: var(--edge), var(--shade), var(--scene) var(--focus) / cover no-repeat;
+}
+.closing.reach-scene {
+  --scene: url("assets/reach-wide.jpg");
+  --focus: 68% center;
+  --shade: linear-gradient(90deg, #071518ab, transparent 73%);
+  text-align: left;
+  min-height: clamp(390px, 38vw, 700px);
+  align-content: center;
+}
+.reach-scene p { margin-left: 0; max-width: min(45%, 36rem); }
+.reach-scene .button { margin-left: 0; }
+.salon-scene {
+  --scene: url("assets/salon-wide.jpg");
+  --focus: center;
+  --shade: linear-gradient(90deg, #071518dc, #07151880 27%, transparent 44%, transparent 54%, #071518d9 70%, #071518ec);
+}
+.salon-scene .section-head {
+  grid-template-columns: 1fr 1fr;
+  gap: 26%;
+  align-items: center;
+  margin-bottom: 0;
+}
+.salon-scene .muted { color: #dae1dc; }
+.sanctum-scene .pagehero-art { inset: 0; }
+.sanctum-scene .pagehero-art img { object-position: 74% center; opacity: .95; }
+.sanctum-scene .pagehero-art:after {
+  background: linear-gradient(90deg,#071518b3,transparent 71%), linear-gradient(0deg,var(--bg),transparent 20%);
+}
+@media (max-width: 760px) {
+  .closing.reach-scene, .section.salon-scene {
+    background: var(--bg);
+    padding-top: 0;
+  }
+  .reach-scene::before, .salon-scene::before {
+    content: ""; display: block; height: clamp(210px, 60vw, 350px);
+    margin: 0 -8vw 24px;
+    background: var(--edge), var(--scene) var(--focus) / cover no-repeat;
+  }
+  .salon-scene::before { margin-inline: -10vw; }
+  .reach-scene p { max-width: 100%; }
+  .salon-scene .section-head { grid-template-columns: 1fr; gap: 20px; }
+  .salon-scene, .reach-scene { overflow: hidden; }
+  .sanctum-scene { padding-bottom: min(65vw, 330px); }
+  .sanctum-scene .pagehero-art { inset: auto 0 0; height: min(65vw, 330px); }
+  .sanctum-scene .pagehero-art:after { background: linear-gradient(var(--bg),transparent 22%,transparent 85%,var(--bg)); }
+}
