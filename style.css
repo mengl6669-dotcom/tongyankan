@@ -129,9 +129,14 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
 .creation-fields-head::before {
   content: "";
   grid-area: light;
-  height: clamp(210px, 22vw, 330px);
-  background: url("assets/i-am.jpg") center / contain no-repeat;
-  mask-image: linear-gradient(0deg, transparent, black 6%, black 96%, transparent);
+  justify-self: center;
+  width: min(100%, clamp(160px, 18vw, 244px));
+  aspect-ratio: 2 / 3;
+  background: url("assets/i-am.jpg") center / 100% 100% no-repeat;
+  mix-blend-mode: lighten;
+  mask-image:
+    radial-gradient(ellipse 50% 54% at 50% 46%, black 49%, transparent 100%),
+    radial-gradient(ellipse 49% 19% at 50% 84%, black 64%, transparent 100%);
 }
 .creation-fields-head .muted { grid-area: description; margin: 0; text-wrap: pretty; }
 .hero.has-photograph .hero-photograph { inset: 0; }
@@ -146,6 +151,6 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
     text-align: center;
     gap: 14px;
   }
-  .creation-fields-head::before { justify-self: center; width: 150px; height: 170px; }
+  .creation-fields-head::before { width: 150px; }
   .hero.has-photograph::after { background: linear-gradient(90deg, #071518d9, #07151844), linear-gradient(0deg, var(--bg), transparent 25%); }
 }
