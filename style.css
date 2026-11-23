@@ -60,3 +60,24 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
   .brand-series-card { justify-content: space-between; }
 }
 .master-brand-lockup{display:grid;grid-template-columns:minmax(180px,260px) 1fr;gap:clamp(28px,6vw,80px);align-items:center;max-width:1080px;margin:72px auto;padding:0 6vw}.master-brand-lockup img{width:100%;height:auto;display:block;border:1px solid var(--line)}.master-brand-name{font:clamp(28px,3vw,42px)/1.4 'Songti SC','Noto Serif CJK SC',serif;letter-spacing:.1em;margin:0 0 18px;color:var(--paper)}.master-brand-hero .master-logo-image{max-width:420px;border:1px solid var(--line)}@media(max-width:760px){.master-brand-lockup{grid-template-columns:1fr;max-width:420px;text-align:center}.master-brand-lockup img{max-width:240px;margin:0 auto}.master-brand-hero{grid-template-columns:1fr;min-height:auto;padding:60px 8vw}.master-brand-hero .master-logo-image{max-width:320px}}
+.horizon-hero .pagehero-art {
+  overflow: hidden;
+  background: linear-gradient(90deg, var(--bg), #030709 55%);
+}
+.horizon-hero .pagehero-art img {
+  position: absolute;
+  inset: -22% 0;
+  height: 144%;
+  object-fit: contain;
+  object-position: center;
+  mask-image: linear-gradient(90deg, transparent, black 20%, black 82%, transparent);
+}
+.brand-series-card { flex-wrap: nowrap; }
+@media (max-width: 760px) {
+  .horizon-hero { padding-bottom: min(68vw, 340px); }
+  .horizon-hero .pagehero-art { inset: auto 0 0; height: min(68vw, 340px); }
+  .horizon-hero .pagehero-art img { opacity: .88; }
+  .horizon-hero .pagehero-art:after {
+    background: linear-gradient(var(--bg), transparent 20%, transparent 85%, var(--bg));
+  }
+}
