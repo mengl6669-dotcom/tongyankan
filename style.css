@@ -219,3 +219,8 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
   --scene: url("assets/shared-light-wide.jpg");
   --focus: 72% center;
 }
+
+.closing.intention-scene {
+  --scene: url("assets/intention-panorama.jpg");
+  --focus: 85% 80%;
+}
