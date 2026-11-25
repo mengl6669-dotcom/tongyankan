@@ -229,3 +229,19 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
   --scene: url("assets/palm-panorama.jpg");
   --focus: 90% center;
 }
+
+.crystal-panel {
+  background: linear-gradient(0deg,var(--bg),transparent 12%,transparent 90%,var(--bg)), linear-gradient(90deg,transparent 36%,#071518d9 62%,var(--bg)), url("assets/crystal-panorama.jpg") center / cover no-repeat;
+}
+.crystal-panel .photo-event { background: transparent; min-height: 320px; aspect-ratio: auto; align-self: stretch; }
+.crystal-panel .photo-event::after { display: none; }
+.crystal-panel .facts { flex-wrap: wrap; gap: .4rem 1.35rem; }
+.crystal-panel .facts strong { white-space: nowrap; font-size: 1rem; }
+@media (max-width: 760px) {
+  .crystal-panel { background: var(--bg); }
+  .crystal-panel .photo-event {
+    margin-inline: -5vw;
+    min-height: clamp(240px, 66vw, 400px);
+    background: linear-gradient(0deg,var(--bg),transparent 25%,transparent 92%,var(--bg)), url("assets/crystal-panorama.jpg") 18% center / cover no-repeat;
+  }
+}
