@@ -224,3 +224,8 @@ header .logo{display:flex;align-items:center;gap:14px;flex-shrink:0}header .bran
   --scene: url("assets/intention-panorama.jpg");
   --focus: 85% 80%;
 }
+
+.closing.palm-scene {
+  --scene: url("assets/palm-panorama.jpg");
+  --focus: 90% center;
+}
